@@ -2,6 +2,9 @@
 
 This is a mirror of Västtrafik's official Travel Planner Javascript API client. See https://developer.vasttrafik.se/portal/#/
 
+### Usage
+Check the example for a runnable example, but 
+
 ### Authentication
 If you just want to test things out you can use the provided key and secret in `example.js`. Don't forget to create your own in the [developer portal](https://developer.vasttrafik.se/portal/#/) before going into production however since it might get invalid at any time.
 

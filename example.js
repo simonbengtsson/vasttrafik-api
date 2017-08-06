@@ -8,10 +8,10 @@ async function example() {
     
     await authorize(key, secret, deviceId);
     
+    // Find other api features in `./mirror/docs` or in the developer portal
     let api = new Api.SysteminfoApi();
-    api.getSystemInfo().then((response) => {
-        console.log(response.text);
-    });
+    let res = await api.getSystemInfo();
+    console.log(res.text);
 }
 
 example();
