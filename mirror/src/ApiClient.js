@@ -450,9 +450,9 @@
       request.query({format: 'json'});
     }
       
-    // @monkeyPatch Duplicates so add a if statement fo 
+    // @monkeyPatch Multiple requests were sent if promises were used 
     if (!callback) {
-      // Assume the user is using promises if no callback is specified
+      // Assume the user is using promises if no callback is specified and return early
       return request;
     }
       
