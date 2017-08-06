@@ -16,7 +16,7 @@ async function example() {
 
 example();
 
-async function authorize(key, secret, deviceId) {
+function authorize(key, secret, deviceId) {
     let auth = new Buffer(`${key}:${secret}`).toString('base64');
 
     let request = superagent('POST', 'https://api.vasttrafik.se/token');
