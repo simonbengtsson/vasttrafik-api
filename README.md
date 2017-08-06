@@ -1,6 +1,6 @@
-# Vasttrafik Travel Planner API Mirror
+# Västtrafik Travel Planner API Mirror
 
-This is a mirror of Västtrafik's official Travel Planner Javascript API client. For more information, see https://developer.vasttrafik.se/portal/#/
+This is a mirror of the official Västtrafik Travel Planner API Client for Javascript. For more information, see https://developer.vasttrafik.se/portal/#/
 
 ### Usage
 For nodejs usage, see `example.js`. For browser usage, see `example.html`. See the examples live by either running `node example.js` or opening `example.html`.

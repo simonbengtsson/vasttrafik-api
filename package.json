@@ -1,7 +1,7 @@
 {
   "name": "vasttrafik-api",
   "version": "1.0.0",
-  "description": "Mirror of the official Västtrafik official Travel Planner API client for javascript",
+  "description": "Mirror of the official Västtrafik Travel Planner API client for javascript",
   "license": "Unlicense",
   "main": "./mirror/src/index.js",
   "scripts": {
