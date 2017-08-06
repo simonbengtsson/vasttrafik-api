@@ -444,6 +444,11 @@
 
     // @monkeyPatch The format query parameter was ignored when the content-type header was set
     delete request.header['Content-Type'];
+    
+    // @monkeyPatch Default to json if no format is set
+    if (!request.qs.format) {
+      request.query({format: 'json'});
+    }
       
     // @monkeyPatch Duplicates so add a if statement fo 
     if (!callback) {
