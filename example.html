@@ -21,8 +21,8 @@
         vasttrafik.ApiClient.instance.defaultHeaders['Authorization'] = `Bearer ${token}`;
 
         // Find other api features in `./mirror/docs` or in the developer portal
-        let api = new vasttrafik.SysteminfoApi();
-        let res = await api.getSystemInfo();
+        let api = new vasttrafik.LocationApi();
+        let res = await api.getLocationByName({input: 'Lindholmen'});
         console.log(res.text);
     }();
 </script>

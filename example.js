@@ -9,8 +9,8 @@ async function example() {
     await authorize(key, secret, deviceId);
     
     // Find other api features in `./mirror/docs` or in the developer portal
-    let api = new Api.SysteminfoApi();
-    let res = await api.getSystemInfo();
+    let api = new Api.LocationApi();
+    let res = await api.getLocationByName({input: 'Lindholmen'});
     console.log(res.text);
 }
 
