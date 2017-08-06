@@ -442,9 +442,17 @@
       }
     }
 
-
+    // @monkeyPatch The format query parameter was ignored when the content-type header was set
+    delete request.header['Content-Type'];
+      
+    // @monkeyPatch Duplicates so add a if statement fo 
+    if (!callback) {
+      // Assume the user is using promises if no callback is specified
+      return request;
+    }
+      
     request.end(function(error, response) {
-      if (callback) {
+      if (callback) { 
         var data = null;
         if (!error) {
           try {
