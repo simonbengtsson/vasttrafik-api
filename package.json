@@ -5,9 +5,13 @@
   "license": "Unlicense",
   "main": "./mirror/src/index.js",
   "scripts": {
-    "example": "node ./example.js"
+    "build": "browserify -s vasttrafik -e ./mirror/src/index.js > dist/vasttrafik.js && uglifyjs dist/vasttrafik.js > dist/vasttrafik.min.js"
   },
   "dependencies": {
     "superagent": "3.5.2"
+  },
+  "devDependencies": {
+    "browserify": "^14.4.0",
+    "uglify-js": "^3.0.27"
   }
 }
