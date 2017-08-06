@@ -16,11 +16,19 @@ async function example() {
 
 example();
 
+/**
+ * Helper method which authorizes the Api client with the specified credentials 
+ * 
+ * @param key {string} Application key (OAuth2)
+ * @param secret {string} Application secret (OAuth2)
+ * @param deviceId {string|number} Unique device id
+ * @returns Promise which resolves when the api client is authorized and ready to be used
+ */
 function authorize(key, secret, deviceId) {
-    let auth = new Buffer(`${key}:${secret}`).toString('base64');
+    let credentials = new Buffer(`${key}:${secret}`).toString('base64');
 
     let request = superagent('POST', 'https://api.vasttrafik.se/token');
-    request.set({Authorization: `Basic ${auth}`});
+    request.set({Authorization: `Basic ${credentials}`});
     request.send(`grant_type=client_credentials&scope=device_${deviceId}`);
 
     return request.then(res => {
