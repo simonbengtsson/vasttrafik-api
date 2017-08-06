@@ -6,8 +6,7 @@ async function example() {
     let key = '8aOzt2RmMIG0OXSyIgjM2IkHvAoa';
     let secret = 'OMxjxjaXblXdpn8E1gYFehHyx3Ea';
     
-    let token = await authorize(key, secret, deviceId);
-    Api.ApiClient.instance.defaultHeaders['Authorization'] = `Bearer ${token}`;
+    await authorize(key, secret, deviceId);
     
     let api = new Api.SysteminfoApi();
     api.getSystemInfo().then((response) => {
@@ -17,9 +16,6 @@ async function example() {
 
 example();
 
-/**
- * Generate an access token with 
- */
 async function authorize(key, secret, deviceId) {
     let auth = new Buffer(`${key}:${secret}`).toString('base64');
 
@@ -31,7 +27,9 @@ async function authorize(key, secret, deviceId) {
         if (!res.ok) {
             return Promise.reject(res.error);
         } else {
-            return res.body.access_token;
+            let client = Api.ApiClient.instance;
+            let token = res.body.access_token;
+            client.defaultHeaders['Authorization'] = `Bearer ${token}`;
         }
     });
 }
