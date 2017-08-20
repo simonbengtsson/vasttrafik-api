@@ -14,17 +14,18 @@
 
 <script src="./dist/vasttrafik.js"></script>
 <script>
-    +async function example() {
+    (function() {
         // Generate access token on server (see example.js) and replace the access token placeholder
         // Vasttrafik seems to have blocked token generation from client side (for security reasons)
-        let token = '<access-token-placeholder>';
+        var token = '<access-token-placeholder>';
         vasttrafik.ApiClient.instance.defaultHeaders['Authorization'] = `Bearer ${token}`;
 
         // Find other api features in `./mirror/docs` or in the developer portal
-        let api = new vasttrafik.LocationApi();
-        let res = await api.getLocationByName({input: 'Lindholmen'});
-        console.log(res.text);
-    }();
+        var api = new vasttrafik.LocationApi();
+        api.getLocationByName({input: 'Lindholmen'}, function() {
+            console.log(res.text);
+        });
+    })();
 </script>
 
 </body>
