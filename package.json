@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Mirror of the official Västtrafik Travel Planner API client for javascript",
   "license": "Unlicense",
-  "main": "./mirror/src/index.js",
+  "main": "./index.js",
   "scripts": {
     "build": "browserify -s vasttrafik -e ./mirror/src/index.js > dist/vasttrafik.js && uglifyjs dist/vasttrafik.js > dist/vasttrafik.min.js"
   },
