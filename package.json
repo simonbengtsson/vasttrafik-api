@@ -8,6 +8,7 @@
     "build": "browserify -s vasttrafik -e ./mirror/src/index.js > dist/vasttrafik.js && uglifyjs dist/vasttrafik.js > dist/vasttrafik.min.js"
   },
   "dependencies": {
+    "Base64": "^1.0.1",
     "superagent": "3.5.2"
   },
   "devDependencies": {
