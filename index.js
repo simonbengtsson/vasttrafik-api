@@ -49,3 +49,5 @@ Api.authorize = function(key, secret, deviceId, callback) {
         }
     });
 };
+
+exports.module = Api;
