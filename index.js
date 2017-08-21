@@ -1,4 +1,4 @@
-const Api = require('./mirror/src/index.js');
+const vasttrafik = require('./mirror/src/index.js');
 const Base64 = require('Base64');
 const superagent = require('superagent');
 
@@ -6,8 +6,8 @@ const superagent = require('superagent');
  * Authorize all upcoming api calls with the specified access token
  * @param token {string}
  */
-Api.setAccessToken = function(token) {
-    let client = Api.ApiClient.instance;
+vasttrafik.setAccessToken = function(token) {
+    let client = vasttrafik.ApiClient.instance;
     client.defaultHeaders['Authorization'] = 'Bearer ' + token;
 };
 
@@ -22,7 +22,7 @@ Api.setAccessToken = function(token) {
  * @param callback
  * @returns Promise
  */
-Api.authorize = function(key, secret, deviceId, callback) {
+vasttrafik.authorize = function(key, secret, deviceId, callback) {
     deviceId = deviceId || new Date().getTime();
     
     let credentials = Base64.btoa(key + ':' + secret);
@@ -39,7 +39,7 @@ Api.authorize = function(key, secret, deviceId, callback) {
             return Promise.reject(res.error);
         } else {
             let token = res.body.access_token;
-            Api.setAccessToken(token);
+            vasttrafik.setAccessToken(token);
 
             if (callback) {
                 callback(null, token);
@@ -50,4 +50,4 @@ Api.authorize = function(key, secret, deviceId, callback) {
     });
 };
 
-exports.module = Api;
+module.exports = vasttrafik;

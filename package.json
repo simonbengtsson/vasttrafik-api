@@ -5,6 +5,7 @@
   "license": "Unlicense",
   "main": "./index.js",
   "scripts": {
+    "start": "node ./example.js",
     "build": "browserify -s vasttrafik -e ./mirror/src/index.js > dist/vasttrafik.js && uglifyjs dist/vasttrafik.js > dist/vasttrafik.min.js"
   },
   "dependencies": {
