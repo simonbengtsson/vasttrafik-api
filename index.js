@@ -12,7 +12,7 @@ Api.setAccessToken = function(token) {
 };
 
 /**
- * Fetches an access token with the specified key and secret and authorize all 
+ * Fetches an access token with the specified key and secret and authorizes all 
  * all upcoming api calls with it. The key and secret should be obtained through 
  * the Västtrafik developer portal https://developer.vasttrafik.se/portal
  * 
