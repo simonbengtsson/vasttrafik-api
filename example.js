@@ -2,6 +2,7 @@ const superagent = require('superagent');
 const vasttrafik = require('./index.js');
 
 async function example() {
+    // Sample credentials. Be sure to get your own before going into production.
     let key = '8aOzt2RmMIG0OXSyIgjM2IkHvAoa';
     let secret = 'OMxjxjaXblXdpn8E1gYFehHyx3Ea';
     
