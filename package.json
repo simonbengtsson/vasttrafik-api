@@ -1,6 +1,6 @@
 {
   "name": "vasttrafik-api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Mirror of the official Västtrafik Travel Planner API client for javascript",
   "license": "Unlicense",
   "main": "./index.js",
