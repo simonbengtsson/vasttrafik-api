@@ -11,12 +11,10 @@ const Api = require('vasttrafik-api');
 const key = '<key>';
 const secret = '<secret>';
 
-Api.authorize(key, secret).then(function() {
-    let api = new Api.LocationApi();
-    return api.getLocationByName({input: 'Lindholmen'});
-}).then(function(res) {
-  console.log(res.text);
-});
+await Api.authorize(key, secret)
+let api = new Api.LocationApi();
+const res = await api.getLocationByName({input: 'Lindholmen'});
+console.log(res.text);
 ```
 
 Browsers (see ./example.html)
