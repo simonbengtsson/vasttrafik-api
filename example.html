@@ -21,7 +21,7 @@
         vasttrafik.setAccessToken(token);
 
         var api = new vasttrafik.LocationApi();
-        api.getLocationByName({input: 'Lindholmen'}, function() {
+        api.getLocationByName({input: 'Lindholmen'}, function(res) {
             console.log(res.text);
         });
     })();
