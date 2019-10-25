@@ -29,7 +29,7 @@ Browsers (see ./example.html)
 
         // Find other api features in `./mirror/docs` or in the developer portal
         var api = new vasttrafik.LocationApi();
-        api.getLocationByName({input: 'Lindholmen'}, function() {
+        api.getLocationByName({input: 'Lindholmen'}, function(res) {
             console.log(res.text);
         });
     })();
