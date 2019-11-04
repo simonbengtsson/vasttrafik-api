@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Västtrafik API</title>
-    
-    <style>
-        
-    </style>
 </head>
 <body>
 
 <h1>Västtrafik API</h1>
+<pre><code id="result">Loading...</code></pre>
 
 <script src="./dist/vasttrafik.js"></script>
 <script>
     (function() {
-        // Generate access token on server (see example.js) and replace the access token placeholder
-        // Vasttrafik seems to have blocked token generation from client side (for security reasons)
-        var token = '<access-token-placeholder>';
+        // Generate access token on server (see example.js) with vasttrafik.authorize(key, secret);
+        // This is a token generated with the sample credentials in example.js 2019-11-04
+        var token = 'b94ad16c-715c-3820-a321-503b0267346e';
         vasttrafik.setAccessToken(token);
 
         var api = new vasttrafik.LocationApi();
-        api.getLocationByName({input: 'Lindholmen'}, function(res) {
-            console.log(res.text);
+        api.getLocationByName({input: 'Lindholmen'}, function (error, data, response) {
+            var element = document.getElementById('result');
+            if (error || !response || !response.text) {
+                error = error || new Error('Unexpected response');
+                element.innerText = error;
+                throw error;
+            }
+            element.innerText = response.text;
         });
     })();
 </script>

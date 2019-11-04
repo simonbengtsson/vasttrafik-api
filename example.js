@@ -1,16 +1,16 @@
-const superagent = require('superagent');
 const vasttrafik = require('./index.js');
 
 async function example() {
     // Sample credentials. Be sure to get your own before going into production.
-    let key = '8aOzt2RmMIG0OXSyIgjM2IkHvAoa';
-    let secret = 'OMxjxjaXblXdpn8E1gYFehHyx3Ea';
-    
-    await vasttrafik.authorize(key, secret);
+    const key = '8aOzt2RmMIG0OXSyIgjM2IkHvAoa';
+    const secret = 'OMxjxjaXblXdpn8E1gYFehHyx3Ea';
+    const token = await vasttrafik.authorize(key, secret);
+
+    console.log(`Authorized with token: ${token}`);
     
     // Find other api features in `./mirror/docs` or in the developer portal
-    let api = new vasttrafik.LocationApi();
-    let res = await api.getLocationByName({input: 'Lindholmen'});
+    const api = new vasttrafik.LocationApi();
+    const res = await api.getLocationByName({input: 'Lindholmen'});
     console.log(res.text);
 }
 
