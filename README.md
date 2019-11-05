@@ -8,13 +8,16 @@ NodeJS (see ./example.js)
 ```js
 const Api = require('vasttrafik-api');
 
-const key = '<key>';
-const secret = '<secret>';
-
-await Api.authorize(key, secret)
-let api = new Api.LocationApi();
-const res = await api.getLocationByName({input: 'Lindholmen'});
-console.log(res.text);
+// Sample credentials. Be sure to get your own before going into production.
+(async () => {
+    const key = '8aOzt2RmMIG0OXSyIgjM2IkHvAoa';
+    const secret = 'OMxjxjaXblXdpn8E1gYFehHyx3Ea';
+    await vasttrafik.authorize(key, secret);
+    
+    const api = new vasttrafik.LocationApi();
+    const res = await api.getLocationByName({input: 'Lindholmen'});
+    console.log(res.text);
+})();
 ```
 
 Browsers (see ./example.html)
@@ -22,14 +25,12 @@ Browsers (see ./example.html)
 <script src="./dist/vasttrafik.js"></script>
 <script>
     (function() {
-        // Fetch access token on server (see example.js)
-        // Västtrafik have blocked token generation from browsers
-        var token = '<access-token-placeholder>';
+        // Sample token. Generate access token on server (see example.js)
+        var token = 'b94ad16c-715c-3820-a321-503b0267346e';
         vasttrafik.setAccessToken(token);
 
-        // Find other api features in `./mirror/docs` or in the developer portal
         var api = new vasttrafik.LocationApi();
-        api.getLocationByName({input: 'Lindholmen'}, function(res) {
+        api.getLocationByName({input: 'Lindholmen'}, function (error, data, res) {
             console.log(res.text);
         });
     })();
