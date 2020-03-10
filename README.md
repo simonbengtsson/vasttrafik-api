@@ -71,5 +71,9 @@ Monkey patches:
 - JSON instead of XML is returned by default (see `mirror/src/ApiClient.js#448`)
 - Avoids duplicate api calls when using promises (see `mirror/src/ApiClient.js#453`)
 
+### Version
+- npm version patch|minor|major
+- npm run deploy
+
 ### Questions?
 You can post questions about Västtrafik's API in the [developer forum](https://developer.vasttrafik.se/portal/#/community/forum/9). Also feel free posting issues or questions regarding this mirror here on github.
