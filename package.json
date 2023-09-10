@@ -1,6 +1,6 @@
 {
   "name": "vasttrafik-api",
-  "version": "1.1.2",
+  "version": "4.0.0",
   "description": "Mirror of the official Västtrafik Travel Planner API client for javascript",
   "repository": "https://github.com/simonbengtsson/vasttrafik-api",
   "license": "Unlicense",
@@ -12,9 +12,8 @@
     "deploy": "git push --follow-tags && npm publish"
   },
   "dependencies": {
-    "Base64": "^1.1.0",
     "querystring": "0.2.0",
-    "superagent": "3.7.0"
+    "superagent": "^5.3.0"
   },
   "devDependencies": {
     "browserify": "^16.5.0",
