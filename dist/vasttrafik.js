@@ -13,10 +13,9 @@ vasttrafik.setAccessToken = function(token, client) {
 };
 
 /**
- * Fetches an access token with the specified key and secret and authorizes all
- * all upcoming api calls with it. The key and secret should be obtained through
- * the Västtrafik developer portal https://developer.vasttrafik.se/portal. This
- * method does not work in browser (vasttrafik security policy).
+ * Fetches an access token with the specified key and secret. The key and secret 
+ * should be obtained through the Västtrafik developer portal https://developer.vasttrafik.se/portal. 
+ * This method does not work in browser (vasttrafik security policy).
  *
  * @param key {string} The oauth 2 key
  * @param secret {string} The oauth 2 secret
@@ -38,7 +37,6 @@ vasttrafik.authorize = function(key, secret, deviceId) {
             return Promise.reject(res.error || new Error('Http error ' + res.statusCode));
         } else {
             var token = res.body.access_token;
-            vasttrafik.setAccessToken(token);
             return token;
         }
     });
