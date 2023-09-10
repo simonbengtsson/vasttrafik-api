@@ -1,6 +1,6 @@
 # Västtrafik API (reseplaneraren) for JavaScript
 
-This is a mirror of the official Västtrafik Travel Planner API Client for Javascript. For more information, see [the official api website](https://developer.vasttrafik.se/portal/#/api/Reseplaneraren/v2/landerss).
+This is a mirror of the official Västtrafik Travel Planner API Client for Javascript. For more information, see [the official api website](https://developer.vasttrafik.se/apis/13/v4).
 
 ### Usage
 
