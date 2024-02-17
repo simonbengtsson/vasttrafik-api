@@ -1,4 +1,4 @@
-# Västtrafik API (Planera Resa v4) for JavaScript
+# Västtrafik API for JavaScript
 
 This is a mirror of the official Västtrafik Travel Planner API Client for Javascript. For more information, see [the official api website](https://developer.vasttrafik.se/apis/13/v4).
 
